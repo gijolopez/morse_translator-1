@@ -40,4 +40,7 @@ class Translator
                     "0" => "-----",
                     " " => " "}
   end
+
+  # def english_to_morse_code(word)
+
 end
