@@ -11,7 +11,10 @@ class TranslatorTest < Minitest::Test
     assert_instance_of Translator, translator
   end
 
-  def test_eng_to_morse_code
+  def test_can_split_words
+    translator = Translator.new
 
+    assert_equal ["h", "e", "l", "l", "o"], translator.downcase_and_split_words("Hello")
   end
+
 end

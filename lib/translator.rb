@@ -41,6 +41,8 @@ class Translator
                     " " => " "}
   end
 
-  # def english_to_morse_code(word)
+  def downcase_and_split_words(word)
+    word.downcase.split(//)
+  end
 
 end
