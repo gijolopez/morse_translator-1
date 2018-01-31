@@ -1,3 +1,5 @@
+require 'pry'
+
 class Translator
   attr_reader :dictionary
 
@@ -41,8 +43,19 @@ class Translator
                     " " => " "}
   end
 
-  def downcase_and_split_words(word)
-    word.downcase.split(//)
-  end
+  def eng_to_morse_code(word)
+    translated_word = word.downcase.split(//)
+    morse_code = String.new
 
+    translated_word.each do |char|
+      if @dictionary.key?(char)
+        morse_code << @dictionary[char]
+      end
+        morse_code
+    end
+  end
 end
+
+translator = Translator.new
+# p translator.downcase_and_split_words("George")
+p translator.eng_to_morse_code("George")
