@@ -13,9 +13,10 @@ class TranslatorTest < Minitest::Test
 
   def test_can_split_words
     translator = Translator.new
+    expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+    actual = translator.downcase_and_split_words("Hello World")
 
-    assert_equal ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"], translator.downcase_and_split_words("Hello World")
-  end
+    assert_equal expected,actual
 
   def test_convert_eng_to_morse_code
     translator = Translator.new
